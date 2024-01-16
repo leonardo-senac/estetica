@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+    .retangulo1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.705);
+        -webkit-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.92);
+        width: 100%;
+        /* Largura do retângulo */
+        /* Altura do retângulo */
+        background-color: #ffffff;
+        /* Cor de fundo do retângulo (pode ser alterada) */
+        text-align: right;
+    }
+
+    .retangulo2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        /* Altura do retângulo */
+        background-color: #b5babd;
+        /* Cor de fundo do retângulo (pode ser alterada) */
+    }
+
+    .margemcima {
+        display: flex;
+        gap: 177px;
+        margin-right: 31px;
+    }
+
+    .carrinho {
+        margin-left: auto;
+        margin-right: 30px;
+        color: black;
+    }
+
+    .botoes {
+        display: flex;
+        gap: 19px;
+        margin-left: 215px;
+        border-left: solid 1px #c3c3c3;
+        padding-left: 31px;
+    }
+
+    .logo {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 76px;
+    }
+
+    .titulo-pagina {
+        margin-top: 10px;
+        margin-bottom: 11px;
+        font-size: 48px;
+        align-self: center;
+    }
+
+    .conteudo {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        padding: 156px 100px 92px;
+        background-color: #B3C2F566;
+        border-radius: 25px;
+        margin-bottom: 38px;
+        align-items: center;
+    }
+
+    .label-cadastro {
+        font-size: 26px;
+    }
+
+    .input-cadastro {
+        border-radius: 25px;
+        padding: 10px 30px;
+        font-size: 28px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 113px;
+    }
+
+    .btn-form {
+        padding: 10px 47px;
+        border-radius: 25px;
+        border: none;
+        font-size: 24px;
+        background-color: #52D912;
+    }
+
+    .btn-form:hover {
+        cursor: pointer;
+    }
+
+    .margemcima a {
+        font-size: 28px;
+    }
+</style>
+
+<body>
+    <header class="retangulo1">
+        <img class="logo" src="{% static 'Group32.svg' %}" alt="a">
+        <div class="margemcima">
+            <a>Serviços</a>
+            <a>Localização</a>
+            <a>Sobre</a>
+            <div class="botoes">
+                <a><img width="31px" height="31px" src="{% static 'carrinho.png' %}" alt="carrinho"></a>
+                <a><img width="31px" height="31px" src="{% static 'conta.png' %}" alt=""></a>
+            </div>
+        </div>
+    </header>
+    <main class="conteudo">
+        <h3 class="titulo-pagina">Adicionar Serviços</h3>
+        <form action="/cadastro_servico/" method="post" class="formulario">
+            {% csrf_token %}
+            <label for="id_nome" class="label-cadastro">Serviço</label>
+            <input class="input-cadastro" type="text" name="nome" maxlength="50" required="" id="id_nome" placeholder="Nome">
+            <button class="btn-form" type="submit">confirmar</button>
+        </form>
+    </main>
+    <footer class="retangulo2">
+        <img src="{% static 'telefone.png' %}" alt="telefone">
+        <p>(84) 99999-9999</p>
+    </footer>
+</body>
+
+</html>
