@@ -121,20 +121,28 @@
     .margemcima a {
         font-size: 28px;
     }
+    .regulamento {
+        display: flex;
+        justify-content: center;
+    }
 </style>
 {% endblock %}
+
 
 {% block header %}{% endblock %}
 {% block main %}
 <main class="conteudo">
-    <h3 class="titulo-pagina">Adicionar Serviços</h3>
-    <form action="/cadastro_servico/" method="post" class="formulario">
-        {% csrf_token %}
-        <label for="id_nome" class="label-cadastro">Serviço</label>
-        <input class="input-cadastro" type="text" name="nome" maxlength="50" required="" id="id_nome"
-            placeholder="Nome">
-        <button class="btn-form" type="submit">confirmar</button>
-    </form>
+    <img src="{% static 'fundoopaco.png' %}" alt="fundo">
+    <h1 class="regulamento">regulamento</h1>
+    <br>
+    <div>
+        <p>- É necessário o agendamento prévio através do telefone (54) 3421-8833 </p>
+        <p class="regulamento">ou WhatsApp (54) 99206-1335.</p>
+        <p>- Necessário apresentar o voucher impresso ou em um dispositivo móvel</p>
+        <p class="regulamento">no dia da reserva.</p>
+        <p class="regulamento">- Horários de atendimento: consulte o horário</p>
+        <p class="regulamento">- NÃO ESTÁ INCLUSO : transporte de ida e volta.</p>
+    </div>
 </main>
 {% endblock %}
 {% block footer %}{% endblock %}

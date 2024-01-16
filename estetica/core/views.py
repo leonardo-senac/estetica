@@ -24,3 +24,6 @@ def servico_dia(request):
         'form': form,
     }
     return render(request, 'servico_dia.html', context)
+
+def regulamento(request):
+     return render(request, 'regulamento.html')

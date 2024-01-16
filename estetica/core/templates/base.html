@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header class="retangulo1">
+        <img class="logo" src="{% static 'Group32.svg' %}" alt="a">
+        <div class="margemcima">
+            <a>Serviços</a>
+            <a>Localização</a>
+            <a>Sobre</a>
+            <div class="botoes">
+                <a><img width="31px" height="31px" src="{% static 'carrinho.png' %}" alt="carrinho"></a>
+                <a><img width="31px" height="31px" src="{% static 'conta.png' %}" alt=""></a>
+            </div>
+        </div>
+    </header>
+    {% block main %}
+    {% endblock %}
+    <footer class="retangulo2">
+        <img src="{% static 'telefone.png' %}" alt="telefone">
+        <p>(84) 99999-9999</p>
+    </footer>
+</body>
+</html>
