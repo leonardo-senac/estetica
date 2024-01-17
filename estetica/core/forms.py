@@ -13,3 +13,8 @@ class FormServicoDia(ModelForm):
     class Meta:
         model = Servico_dia
         fields = '__all__'
+        widgets = {
+            "servico": forms.Select(attrs={'class': 'select'}),
+            "data": forms.DateInput(attrs={'class': 'data', 'type': 'date'})
+        }
+
