@@ -1,0 +1,376 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+    .retangulo1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.705);
+        -webkit-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.92);
+        width: 100%;
+        background-color: #ffffff;
+        text-align: right;
+    }
+
+    .retangulo2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        background-color: #b5babd;
+    }
+
+    .margemcima {
+        display: flex;
+        gap: 177px;
+        margin-right: 31px;
+    }
+
+    .carrinho {
+        margin-left: auto;
+        margin-right: 30px;
+        color: black;
+    }
+
+    .botoes {
+        display: flex;
+        gap: 19px;
+        margin-left: 215px;
+        border-left: solid 1px #c3c3c3;
+        padding-left: 31px;
+    }
+
+    .logo {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 76px;
+    }
+
+    .titulo-pagina {
+        margin-top: 10px;
+        margin-bottom: 11px;
+        font-size: 48px;
+        align-self: center;
+    }
+
+    .conteudo {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        padding: 156px 100px 92px;
+        background-color: #B3C2F566;
+        border-radius: 25px;
+        margin-bottom: 38px;
+        align-items: center;
+    }
+
+    .label-cadastro {
+        font-size: 26px;
+    }
+
+    .input-cadastro {
+        border-radius: 25px;
+        padding: 10px 30px;
+        font-size: 28px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 113px;
+    }
+
+    .btn-form {
+        width: 216px;
+        height: 66px;
+        border-radius: 20px;
+        font-size: 24px;
+        background-color: #52D912;
+        border: solid 1px #888888;
+        color: #ffffff;
+    }
+
+    .btn-form:hover {
+        cursor: pointer;
+    }
+
+    .margemcima a {
+        font-size: 28px;
+    }
+
+    .imagem {
+        width: 1175px;
+        height: 558px;
+    }
+
+    .nomeladoimagem {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textoladoimagem {
+        display: flex;
+        flex-direction: column;
+        margin-top: 17.5px;
+    }
+
+    .filtrar {
+        align-self: flex-end;
+        margin-right: 99px;
+        margin-bottom: 22.5px;
+    }
+
+    .conteudo-imagem-texto {
+        display: flex;
+    }
+
+    .textoladoimagem p {
+        max-width: 460px;
+    }
+
+    .textoladoimagem h1 {
+        font-size: 48px;
+    }
+
+    .imagem-procedimento {
+        margin-left: 30px;
+        margin-right: 61px;
+    }
+
+    .preco {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 200px;
+    }
+
+    .valor {
+        color: #52D912;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .por {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 2;
+    }
+
+    #sidebar {
+        height: 100%;
+        width: 0;
+        opacity: 0;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: width 0.5s, opacity 0.5s;
+        padding-top: 60px;
+        color: white;
+        visibility: hidden;
+    }
+
+    #sidebar.open {
+        width: 20%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    #sidebar a:hover {
+        color: #f1f1f1;
+    }
+
+    #sidebar .closebtn {
+        position: fixed;
+        top: 0px;
+        right: 25px;
+        font-size: 70px;
+    }
+
+    #sidebar hr {
+        margin: 10px 0;
+        border: 1px solid #818181;
+    }
+
+    #main {
+        transition: margin-right 0.5s;
+        padding: 16px;
+    }
+
+    #bookingDetails {
+        text-align: center;
+    }
+
+    #serviceName {
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 14px;
+        color: #818181;
+    }
+
+    #serviceImage {
+        width: 300px;
+        height: 230px;
+        background-color: #FFF4FE;
+        margin: 10px auto;
+        border-radius: 10px;
+        margin-bottom: 400px;
+    }
+
+    #discountCode {
+        margin-bottom: 0px;
+        margin-top: 180px;
+        padding: 8px;
+        width: 60%;
+        border-radius: 15px;
+        display: inline-block;
+    }
+
+    #applyButton {
+        margin: 10px 0;
+        padding: 8px;
+        background-color: #F3BD30;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        display: inline-block;
+        width: 30%;
+    }
+
+    #totalAmount {
+        margin: 0px 25px;
+        margin-top: -12px;
+        margin-bottom: -22px;
+        padding: 8px;
+        width: 80%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color:#424242
+    }
+
+    #confirmButton {
+        margin-top: 0px;
+        padding: 10px;
+        background-color: #52D912;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 320px;
+        height: 50px;
+    }
+
+    .carrinhotitulo {
+        display: flex;
+        margin-left: 45px;
+        margin-top: -20px;
+        margin-bottom: 35px;
+        font-size: 25px;
+        color: #424242;
+    }
+</style>
+{% endblock %}
+
+{% block header %}{% endblock %}
+{% block main %}
+<main>
+    <div id="overlay"></div>
+
+    <div class="nomeladoimagem">
+        <img class="filtrar" src="{% static 'filtrar.svg' %}" alt="a">
+        <div class="conteudo-imagem-texto">
+            <img class="imagem-procedimento" src="{% static 'massagem.png' %}" alt="a">
+            <div class="textoladoimagem">
+                <h1>Massagem Terapêutica</h1>
+                <p>A massagem terapêutica busca tratar as dores que provêm de vários fatores dentre esses, o estresse no
+                    trabalho causando forte tensão emocional, posturas inadequadas, posicionamento prolongado. O início
+                    das dores pode ser através de nódulos, localizada em algum local do corpo que tem musculatura
+                    formada pelas tensões.</p>
+                <div class="preco">
+                    <p class="por">Por <span class="valor">R$00,00</span></p>
+                    <button class="btn-form" type="submit" onclick="openNav()">Agendar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div id="bookingDetails">
+                <p class="carrinhotitulo">Carrinho de serviços</p>
+                <hr>
+                <div id="serviceName">(1) Serviço</div>
+                <div id="serviceImage"></div>
+                <hr>
+                <div id="totalAmount">
+                    <p>Total:</p>
+                    <p>R$100,00</p>
+                </div>
+                <br>
+                <button id="confirmButton">Confirmar Agendamento</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function openNav() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("sidebar").classList.add('open');
+    }
+
+    function closeNav() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("sidebar").classList.remove('open');
+    }
+</script>
+{% endblock %}
+{% block footer %}{% endblock %}

@@ -27,3 +27,6 @@ def servico_dia(request):
 
 def regulamento(request):
      return render(request, 'regulamento.html')
+
+def pagina_servico(request):
+     return render(request, 'pagina_servico.html')

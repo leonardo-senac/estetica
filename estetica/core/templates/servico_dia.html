@@ -107,6 +107,7 @@
     }
 
     .btn-form {
+        display: flex;
         padding: 10px 47px;
         border-radius: 25px;
         border: none;
@@ -137,11 +138,24 @@
     .form {
         display: flex;
         flex-direction: column;
-        padding: 156px 100px 92px;
+        padding: 60px 140px 85px;
         background-color: #B3C2F566;
+        font-size: 30px;
         border-radius: 25px;
         margin-bottom: 38px;
         align-items: center;
+    }
+    .select {
+        font-size: 30px;
+        margin-bottom: 40px;
+        border-radius: 15px;
+    }
+    .data {
+        font-size: 20px;
+        width: 200px;
+        height: 80px;
+        border-radius: 20px;
+        margin-bottom: -5px;
     }
 </style>
 {% endblock %}
@@ -154,6 +168,7 @@
     <form class="form" action="{% url 'servico_dia' %}" method="post">
         {% csrf_token %}
         {{form}}
+        <br>
         <button class="btn-form" type="submit">Salvar</button>
     </form>
 </main>
