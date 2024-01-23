@@ -30,3 +30,6 @@ def regulamento(request):
 
 def pagina_servico(request):
      return render(request, 'pagina_servico.html')
+
+def local(request):
+     return render(request, 'local.html')

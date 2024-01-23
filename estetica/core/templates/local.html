@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+    }
+
+    .retangulo1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.705);
+        -webkit-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.92);
+        width: 100%;
+        /* Largura do retângulo */
+        /* Altura do retângulo */
+        background-color: #ffffff;
+        /* Cor de fundo do retângulo (pode ser alterada) */
+        text-align: right;
+    }
+
+    .retangulo2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        /* Altura do retângulo */
+        background-color: #b5babd;
+        /* Cor de fundo do retângulo (pode ser alterada) */
+    }
+
+    .margemcima {
+        display: flex;
+        gap: 177px;
+        margin-right: 31px;
+    }
+
+    .carrinho {
+        margin-left: auto;
+        margin-right: 30px;
+        color: black;
+    }
+
+    .botoes {
+        display: flex;
+        gap: 19px;
+        margin-left: 215px;
+        border-left: solid 1px #c3c3c3;
+        padding-left: 31px;
+    }
+
+    .logo {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 76px;
+    }
+
+    .titulo-pagina {
+        margin-top: 10px;
+        margin-bottom: 11px;
+        font-size: 48px;
+        align-self: center;
+
+    }
+
+    .conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        padding: 156px 100px 92px;
+        background-color: #B3C2F566;
+        border-radius: 25px;
+        margin-bottom: 38px;
+        align-items: center;
+    }
+
+    .label-cadastro {
+        font-size: 26px;
+    }
+
+    .input-cadastro {
+        border-radius: 25px;
+        padding: 10px 30px;
+        font-size: 28px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 113px;
+    }
+
+    .btn-form {
+        padding: 10px 47px;
+        border-radius: 25px;
+        border: none;
+        font-size: 24px;
+        background-color: #52D912;
+    }
+
+    .btn-form:hover {
+        cursor: pointer;
+    }
+
+    .margemcima a {
+        font-size: 28px;
+    }
+
+    .foto {
+        width: 781px;
+        height: 530px;
+        display: flex;
+    }
+
+    .texto {
+        font-size: 23.5px;
+        text-align: left;
+    }
+</style>
+{% endblock %}
+
+{% block header %}{% endblock %}
+{% block main %}
+
+<main class="conteudo">
+    <div class="foto">
+        <img src="{% static 'senacara.jpg' %}" alt="center">
+    </div>
+
+    <div class="texto">
+        <h1 class="Local">Local</h1>
+        <p>Rua Marinete Francisca Nunes, s/n - Brasiliana, Arapiraca - AL, 57310-510</p>
+        <br>
+        <h1 class="Horário de atendimento">Horario de atendimento</h1>
+        <p>De segunda a sábado de 08h às 19h.</p>
+    </div>
+    </form>
+</main>
+{% endblock %}
+{% block footer %}{% endblock %}

@@ -7,5 +7,6 @@ urlpatterns=[
     path('cadastro_servico/', cadastro_servico, name='cadastro_servico'),
     path('servico_dia/', servico_dia, name='servico_dia'),
     path('regulamento/', regulamento, name='regulamento'),
-    path('pagina_servico/', pagina_servico, name='pagina_servico')
+    path('pagina_servico/', pagina_servico, name='pagina_servico'),
+    path('local/', local, name='local'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
