@@ -9,4 +9,5 @@ urlpatterns=[
     path('regulamento/', regulamento, name='regulamento'),
     path('pagina_servico/', pagina_servico, name='pagina_servico'),
     path('local/', local, name='local'),
+    path('listagem/', listagem, name='listagem')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

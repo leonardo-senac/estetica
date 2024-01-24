@@ -33,3 +33,6 @@ def pagina_servico(request):
 
 def local(request):
      return render(request, 'local.html')
+
+def listagem(request):
+     return render(request, 'listagem.html')

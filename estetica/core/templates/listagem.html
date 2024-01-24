@@ -26,10 +26,7 @@
         -webkit-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.63);
         -moz-box-shadow: -2px 4px 15px -3px rgba(0, 0, 0, 0.92);
         width: 100%;
-        /* Largura do retângulo */
-        /* Altura do retângulo */
         background-color: #ffffff;
-        /* Cor de fundo do retângulo (pode ser alterada) */
         text-align: right;
     }
 
@@ -38,12 +35,10 @@
         align-items: center;
         justify-content: center;
         height: 30px;
-        /* Altura do retângulo */
         background-color: #b5babd;
-        /* Cor de fundo do retângulo (pode ser alterada) */
     }
 
-    .imagem-senac{
+    .imagem-senac {
         width: 781px;
         height: 530px;
     }
@@ -79,7 +74,6 @@
         margin-bottom: 11px;
         font-size: 48px;
         align-self: center;
-
     }
 
     .conteudo {
@@ -99,7 +93,7 @@
     .formulario {
         display: flex;
         flex-direction: column;
-        padding: 156px 100px 92px;
+        padding: 50px 1px 0px;
         background-color: #B3C2F566;
         border-radius: 25px;
         margin-bottom: 38px;
@@ -143,22 +137,103 @@
         font-size: 20px;
         font-weight: 600;
     }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 48px;
+        margin-right: 48px;
+        margin-bottom: 20px;
+        /* Adjust margin-bottom as needed */
+        border-radius: 10px;
+    }
+
+    th,
+    td {
+        background-color: #B3C2F5;
+        border: 1px solid #ffffff;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #fff;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        cursor: pointer;
+        background-color: #18B21E;
+        border-radius: 10px;
+        color: #ffffff;
+    }
+
+    .btn2 {
+        background-color: #538DFF;
+    }
+
+    .btn3 {
+        background-color: #FF5353;
+    }
+
+    .labels {
+        display: flex;
+        justify-content: space-around;
+        margin-top: -340px;
+        margin-right: 100px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .servico {
+        margin-right: 250px;
+    }
+
+    .todes {
+        text-align: center;
+    }
 </style>
 {% endblock %}
 
 {% block header %}{% endblock %}
 {% block main %}
+<main>
 
-<main class="listagem">
-    <div class="texto-cima">
-        <p>NOMES</p>
-        <p>DATA</p>
-        <p>TELEFONE</p>
-        <p>POSIÇÂO</p>
-        <p>SERVIÇOS</p>
-    </div>
-
+    <table>
+        <tbody>
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Telefone</th>
+                <th>Posição</th>
+                <th class="servico">Serviço</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="todes">Exemplo 1</td>
+                <td class="todes">01/01/2024</td>
+                <td class="todes">(123) 456-7890</td>
+                <td class="todes">Posição 1</td>
+                <td class="todes">Serviço A</td>
+                <td>
+                    <button class="btn" onclick="iniciarAcao()">Iniciar</button>
+                </td>
+                <td>
+                    <button class="btn btn2" onclick="terminarAcao()">Terminar</button>
+                </td>
+                <td>
+                    <button class="btn btn3" onclick="apagarAcao()">Apagar</button>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
 </main>
-
 {% endblock %}
 {% block footer %}{% endblock %}
